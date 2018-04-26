@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.ltd.model.places.Location" table="Location" schema="carservice1">
+    <id name="locationid">
+     <generator class="increment"></generator>
+    </id>
+    <property name="street"></property>
+    <property name="city"></property>
+    <property name="state"></property>
+    <property name="pin"></property>
+    </class>
+    </hibernate-mapping>

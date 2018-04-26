@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.model.payment.VehicleCharges" table="VehicleCharges" schema="carservice1">
+    <id name="vehiclechargesid">
+    <generator class="foreign">
+      <param name="property">cartype</param>
+    </generator>
+    
+    </id>
+    <property name="day_charge"></property>
+    <property name="night_charge"></property>
+    <property name="for_day_booking"></property>
+    <property name="for_night_booking"></property>
+    <property name="monthly_rate"></property>
+    <property name="weekly_rate"></property>
+    <property name="extraperkm"></property>
+    <property name="waitingcharges"></property>
+    <one-to-one name="cartype" class="com.carservice.ltd.model.vehicle.CarType">
+    </one-to-one>
+    </class>
+    </hibernate-mapping>

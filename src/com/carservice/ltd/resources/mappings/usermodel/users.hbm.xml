@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.carservice.ltd.model.User" table="caruser" schema="carservice1">
+<id name="userid">
+  <generator class="increment"></generator>
+</id>
+<property name="username"></property>
+<property name="password"></property>
+<property name="dob"></property>
+<property name="Gender"></property>
+<set name="address" cascade="all">
+<key column="userid"></key>
+<one-to-many class="com.carservice.ltd.model.Address"/>
+</set>
+<joined-subclass name="com.carservice.ltd.model.Employee" table="employee" schema="carservice1">
+<key column="userid"></key>
+<property name="joindate"></property>
+<property name="role"></property>
+<many-to-one name="branch" class="com.carservice.ltd.model.places.Branch"></many-to-one>
+    <joined-subclass name="com.carservice.ltd.model.Driver" table="driver" schema="carservice1">
+    <key column="userid"></key>
+    <property name="licence"></property>
+    </joined-subclass>
+</joined-subclass>
+</class>
+</hibernate-mapping>

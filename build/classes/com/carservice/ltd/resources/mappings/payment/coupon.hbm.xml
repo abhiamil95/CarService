@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.model.payment.Coupon" table="Coupon" schema="carservice1">
+    <id name="couponid">
+    <generator class="increment"></generator>
+    </id>
+    <property name="discount"></property>
+    <property name="min_amount"></property>
+    <property name="max_amount"></property>
+    <property name="expdate"></property>
+    </class>
+    </hibernate-mapping>

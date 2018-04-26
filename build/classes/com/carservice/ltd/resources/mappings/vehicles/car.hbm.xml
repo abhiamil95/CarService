@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.ltd.model.vehicle.Car" table="Car" schema="carservice1">
+    <id name="carid">
+     <generator class="increment"></generator>
+    </id>
+    <property name="carname"></property>
+    <property name="regi_number"></property>
+    <property name="vehicleno"></property>
+    <property name="dateadded"></property>
+    <property name="modelyr"></property>
+    <property name="available_flag"></property>
+    <many-to-one name="cartype" class="com.carservice.ltd.model.vehicle.CarType">
+     <column name="cartypeid"></column>
+    </many-to-one>
+    <many-to-one name="fueltypeid" class="com.carservice.ltd.model.vehicle.FuelType">
+     <column name="fueltypeid"></column>
+    </many-to-one>
+    
+    <many-to-one name="branch" class="com.carservice.ltd.model.places.Branch">
+     <column name="branchid"></column>
+    </many-to-one>
+    </class>
+    </hibernate-mapping>

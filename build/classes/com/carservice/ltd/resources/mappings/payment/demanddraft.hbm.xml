@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.model.payment.DemadDraft" table="DemadDraft" schema="carservice1">
+    <composite-id>
+       <key-property name="ddno"></key-property>
+       <key-property name="bankname"></key-property>
+    </composite-id>
+    <property name="branchname"></property>
+    <property name="amount"></property>
+    <property name="ddtime"></property>
+    <property name="dddate"></property>
+    <property name="expdate"></property>
+    <many-to-one name="payment" class="com.carservice.model.payment.Payment">
+      <column name="paymentid"/>
+    </many-to-one>
+    </class>
+    </hibernate-mapping>

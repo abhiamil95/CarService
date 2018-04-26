@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+	<session-factory>
+	<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/carservice1</property>
+    <property name = "hibernate.connection.username">root</property>
+    <property name = "hibernate.connection.password">root</property>
+    <property name="pool_size">15</property> 
+    <property name="hbm2ddl.auto">create</property>
+    <property name="show_sql">true</property>
+      <!-- List of XML mapping files -->
+      <mapping resource = "com/carservice/ltd/resources/mappings/usermodel/address.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/usermodel/users.hbm.xml"/>
+      
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/coupon.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/demanddraft.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/drivercharges.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/insurance.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/insurancetype.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/payment.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/paymenttype.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/payment/vehiclecharges.hbm.xml"/>
+      
+      <mapping resource = "com/carservice/ltd/resources/mappings/places/branch.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/places/location.hbm.xml"/>
+      
+      <mapping resource = "com/carservice/ltd/resources/mappings/transactionmodel/bookingrecord.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/transactionmodel/carforsale.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/transactionmodel/carselling.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/transactionmodel/confirmation.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/transactionmodel/timesheet.hbm.xml"/>
+      
+      <mapping resource = "com/carservice/ltd/resources/mappings/vehicles/car.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/vehicles/cartype.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/vehicles/fuelreading.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/vehicles/fueltype.hbm.xml"/>
+      <mapping resource = "com/carservice/ltd/resources/mappings/vehicles/speedometerreading.hbm.xml"/>
+
+	</session-factory>
+	</hibernate-configuration>

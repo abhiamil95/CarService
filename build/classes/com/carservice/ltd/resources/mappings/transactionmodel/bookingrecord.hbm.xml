@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="com.carservice.model.transaction.BookingRecord" table="BookingRecord" schema="carservice1">
+    <id name="bookingid">
+    <generator class="increment"/>
+    </id>
+    <many-to-one name="source" class="com.carservice.ltd.model.places.Location"></many-to-one>
+    <many-to-one name="destination" class="com.carservice.ltd.model.places.Location"></many-to-one>
+    <property name="doj"></property>
+    <property name="distance"></property>
+    <property name="count_of_passegers"></property>
+    <property name="driver_flag"></property>
+    <property name="confirmation_flag"></property>
+    <many-to-one name="user" class="com.carservice.ltd.model.User"/>
+    <many-to-one name="car" class="com.carservice.ltd.model.vehicle.Car"></many-to-one>
+    <many-to-one name="timesheet" class="com.carservice.model.transaction.Timesheet"></many-to-one>
+    </class>
+    </hibernate-mapping>
